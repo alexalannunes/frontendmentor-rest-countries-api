@@ -9,6 +9,9 @@
     "standard-with-typescript",
     "plugin:prettier/recommended"
   ],
+  "parserOptions": {
+    "project": ["../tsconfig.json"]
+  },
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
