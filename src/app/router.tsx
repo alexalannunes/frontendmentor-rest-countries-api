@@ -1,8 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
+import { Layout } from "../pages/layout";
+import { CountriesPage } from "../pages/countries/countries";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <div className="bg-red-300">Hello world!</div>,
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <CountriesPage />,
+      },
+    ],
   },
 ]);
