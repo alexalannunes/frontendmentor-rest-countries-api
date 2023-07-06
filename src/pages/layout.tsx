@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { FaMoon } from "react-icons/fa";
 import { useState } from "react";
 
@@ -37,14 +37,16 @@ export function Layout() {
   };
 
   return (
-    <div className="min-h-[100vh] grid grid-rows-[60px_1fr] bg-[#fafafa]  ">
-      <header className="shadow-md bg-white dark:bg-slate-700">
+    <div className="min-h-[100vh] grid grid-rows-[60px_1fr]">
+      <header className="shadow-md bg-palette-white-paper dark:bg-palette-dark-paper">
         <div className="max-w-[1440px] px-6 h-full items-center flex-1 ] w-full mx-auto flex justify-between">
-          <h4 className="font-bold text-lg dark:text-white">
-            Where in the world?
-          </h4>
+          <Link to="/">
+            <h4 className="font-bold text-lg text-palette-light-text dark:text-palette-dark-text">
+              Where in the world?
+            </h4>
+          </Link>
           <button
-            className="flex items-center gap-2 font-semibold py-2 px-3 rounded-md cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-600 dark:text-white"
+            className="flex items-center gap-2 font-semibold py-2 px-3 rounded-md cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-600 dark:text-white"
             onClick={handleToggleTheme}
           >
             <FaMoon />
@@ -52,7 +54,7 @@ export function Layout() {
           </button>
         </div>
       </header>
-      <main className="h-full dark:bg-slate-800 dark:text-white">
+      <main className="h-full">
         <div className="max-w-[1440px] mx-auto p-6 h-full">
           <Outlet />
         </div>

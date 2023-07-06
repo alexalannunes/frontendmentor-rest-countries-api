@@ -20,11 +20,11 @@ export function CountriesFilters({
     onSearch(ev.target.value);
   };
   return (
-    <div className="flex justify-between items-center">
-      <div className="shadow-md rounded-md flex items-center px-4 h-12 bg-white w-96 focus-within:ring-2 focus-within:ring-slate-200 focus-within:ring-offset-2">
-        <FaSearch className="text-gray-500" />
+    <div className="flex flex-col gap-2 justify-between items-center sm:flex-col md:flex-row lg:flex-row sm:gap-2 md:gap-2 lg:gap-0">
+      <div className="shadow-md rounded-md flex items-center px-4 h-12 bg-palette-light-paper dark:bg-palette-dark-paper focus-within:ring-2 dark:focus-within:ring-1 focus-within:ring-slate-200 focus-within:ring-offset-1 sm:w-full md:w-96 lg:w-96 w-full">
+        <FaSearch className="text-palette-light-input dark:text-palette-dark-input" />
         <input
-          className="h-full pl-3 outline-none w-full"
+          className="h-full pl-3 outline-none w-full placeholder:text-palette-light-input dark:placeholder:text-palette-dark-input bg-palette-light-paper dark:bg-palette-dark-paper text-palette-light-text dark:text-palette-dark-text"
           placeholder="Search for a country"
           value={search}
           onChange={onHandleChange}
@@ -34,7 +34,7 @@ export function CountriesFilters({
       <DropdownMenu.Root>
         <DropdownMenu.Trigger asChild>
           <button
-            className="shadow-md rounded-md flex items-center h-12 bg-white w-56  px-4 justify-between outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
+            className="w-full outline-none justify-between shadow-md rounded-md flex items-center px-4 h-12 bg-palette-light-paper dark:bg-palette-dark-paper focus-within:ring-2 dark:focus-within:ring-1 focus-within:ring-slate-200 focus-within:ring-offset-1 text-palette-light-text dark:text-palette-dark-text sm:w-full md:w-52 lg:w-52"
             aria-label="Filter by Region"
           >
             Filter by Region
@@ -44,7 +44,7 @@ export function CountriesFilters({
 
         <DropdownMenu.Portal>
           <DropdownMenu.Content
-            className="w-56 bg-white rounded-md mt-1 p-[5px] shadow-lg will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
+            className="w-56 bg-palette-light-paper dark:bg-palette-dark-paper text-palette-light-text dark:text-palette-dark-text rounded-md mt-1 p-[5px] shadow-lg will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
             sideOffset={5}
             defaultValue="new"
           >
@@ -53,22 +53,22 @@ export function CountriesFilters({
               onValueChange={onRegionChange}
             >
               <DropdownMenu.RadioItem
-                className="hover:bg-slate-200 focus:bg-slate-200 cursor-pointer leading-none rounded-[3px] flex items-center h-10 px-[2] relative pl-[25px] select-none outline-none"
+                className="hover:bg-slate-200 focus:bg-slate-200 dark:hover:bg-palette-dark-background dark:focus:bg-palette-dark-background cursor-pointer leading-none rounded-[3px] flex items-center h-10 px-[2] relative pl-[25px] select-none outline-none"
                 value=""
               >
                 <DropdownMenu.ItemIndicator className="absolute left-0 w-[25px] inline-flex items-center justify-center">
-                  <FaDotCircle className="text-[13px] text-slate-500" />
+                  <FaDotCircle className="text-[13px] text-palette-light-text dark:text-palette-dark-text" />
                 </DropdownMenu.ItemIndicator>
                 <span className="ml-1">None</span>
               </DropdownMenu.RadioItem>
               {regions.map((item) => (
                 <DropdownMenu.RadioItem
                   key={item}
-                  className="hover:bg-slate-200 focus:bg-slate-200 cursor-pointer leading-none rounded-[3px] flex items-center h-10 px-[2] relative pl-[25px] select-none outline-none"
+                  className="hover:bg-slate-200 focus:bg-slate-200 dark:hover:bg-palette-dark-background dark:focus:bg-palette-dark-background cursor-pointer leading-none rounded-[3px] flex items-center h-10 px-[2] relative pl-[25px] select-none outline-none"
                   value={item}
                 >
                   <DropdownMenu.ItemIndicator className="absolute left-0 w-[25px] inline-flex items-center justify-center">
-                    <FaDotCircle className="text-[13px] text-slate-500" />
+                    <FaDotCircle className="text-[13px] text-palette-light-text dark:text-palette-dark-text" />
                   </DropdownMenu.ItemIndicator>
                   <span className="ml-1">{item}</span>
                 </DropdownMenu.RadioItem>
