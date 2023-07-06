@@ -33,6 +33,22 @@ module.exports = {
         slideRightAndFade:
           "slideRightAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
       },
+      colors: {
+        palette: {
+          dark: {
+            background: "hsl(207, 26%, 17%)",
+            paper: "hsl(209, 23%, 22%)",
+            text: "hsl(0, 0%, 100%)",
+            input: "hsl(0, 0%, 80%)",
+          },
+          light: {
+            background: "hsl(0, 0%, 98%)",
+            paper: "hsl(0, 0%, 100%)",
+            text: "hsl(200, 15%, 8%)",
+            input: "hsl(0, 0%, 52%)",
+          },
+        },
+      },
     },
   },
   plugins: [],
