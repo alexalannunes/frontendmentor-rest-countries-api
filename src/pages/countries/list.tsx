@@ -6,7 +6,7 @@ interface CountriesListProps {
 }
 export function CountriesList({ countries }: CountriesListProps) {
   return (
-    <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
       {countries.map((item) => (
         <Link to={`/${item.alpha2Code}`} key={item.name}>
           <div className="rounded-lg shadow-md bg-palette-light-paper dark:bg-palette-dark-paper flex flex-col overflow-hidden">

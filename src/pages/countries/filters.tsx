@@ -20,8 +20,8 @@ export function CountriesFilters({
     onSearch(ev.target.value);
   };
   return (
-    <div className="flex flex-col gap-2 justify-between items-center sm:flex-col md:flex-row lg:flex-row sm:gap-2 md:gap-2 lg:gap-0">
-      <div className="shadow-md rounded-md flex items-center px-4 h-12 bg-palette-light-paper dark:bg-palette-dark-paper focus-within:ring-2 dark:focus-within:ring-1 focus-within:ring-slate-200 focus-within:ring-offset-1 sm:w-full md:w-96 lg:w-96 w-full">
+    <div className="flex flex-col justify-between items-center md:flex-row lg:flex-row gap-2 md:gap-2 lg:gap-0">
+      <div className="shadow-md rounded-md flex items-center px-4 h-12 bg-palette-light-paper dark:bg-palette-dark-paper focus-within:ring-2 dark:focus-within:ring-1 focus-within:ring-slate-200 focus-within:ring-offset-1 md:w-96 lg:w-96 w-full">
         <FaSearch className="text-palette-light-input dark:text-palette-dark-input" />
         <input
           className="h-full pl-3 outline-none w-full placeholder:text-palette-light-input dark:placeholder:text-palette-dark-input bg-palette-light-paper dark:bg-palette-dark-paper text-palette-light-text dark:text-palette-dark-text"
@@ -34,7 +34,7 @@ export function CountriesFilters({
       <DropdownMenu.Root>
         <DropdownMenu.Trigger asChild>
           <button
-            className="w-full outline-none justify-between shadow-md rounded-md flex items-center px-4 h-12 bg-palette-light-paper dark:bg-palette-dark-paper focus-within:ring-2 dark:focus-within:ring-1 focus-within:ring-slate-200 focus-within:ring-offset-1 text-palette-light-text dark:text-palette-dark-text sm:w-full md:w-52 lg:w-52"
+            className="outline-none justify-between shadow-md rounded-md flex items-center px-4 h-12 bg-palette-light-paper dark:bg-palette-dark-paper focus-within:ring-2 dark:focus-within:ring-1 focus-within:ring-slate-200 focus-within:ring-offset-1 text-palette-light-text dark:text-palette-dark-text w-full md:w-52 lg:w-52"
             aria-label="Filter by Region"
           >
             Filter by Region
