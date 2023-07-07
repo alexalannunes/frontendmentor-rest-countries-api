@@ -28,4 +28,5 @@ export interface Country {
     png: string;
     svg: string;
   };
+  borders?: string[];
 }
