@@ -15,7 +15,7 @@ export function CountriesPage() {
   const debounceValue = useDebounce(search, 500);
 
   const filteredCountriesSearch = data.filter((country) =>
-    country.name.toLowerCase().includes(debounceValue.toLowerCase())
+    country.name.common.toLowerCase().includes(debounceValue.toLowerCase())
   );
 
   const filteredCountriesRegion = !region
