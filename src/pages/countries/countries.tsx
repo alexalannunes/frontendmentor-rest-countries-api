@@ -1,26 +1,21 @@
 import { useState } from "react";
 import { useDebounce } from "usehooks-ts";
-import data from "../../assets/data.json";
 import { CountriesFilters } from "./filters";
 import { CountriesList } from "./list";
-import { type Country } from "../../types/country.type";
-
-const regionsSet = new Set(data.map((item) => item.region));
-const regions = Array.from(regionsSet);
+import { useCountries } from "../../hooks/countries/use-countries";
+import { useRegions } from "../../hooks/countries/use-regions";
+import { useFilters } from "../../hooks/countries/use-filters";
 
 export function CountriesPage() {
+  const countries = useCountries();
+  const regions = useRegions(countries);
+
   const [region, setRegion] = useState("");
   const [search, setSearch] = useState("");
 
   const debounceValue = useDebounce(search, 500);
 
-  const filteredCountriesSearch = data.filter((country) =>
-    country.name.common.toLowerCase().includes(debounceValue.toLowerCase())
-  );
-
-  const filteredCountriesRegion = !region
-    ? filteredCountriesSearch
-    : filteredCountriesSearch.filter((country) => country.region === region);
+  const filteredCountries = useFilters(countries, debounceValue, region);
 
   return (
     <div className="flex flex-col gap-10">
@@ -32,7 +27,7 @@ export function CountriesPage() {
         search={search}
       />
 
-      <CountriesList countries={filteredCountriesRegion as Country[]} />
+      <CountriesList countries={filteredCountries} />
     </div>
   );
 }
