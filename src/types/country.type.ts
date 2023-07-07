@@ -3,9 +3,9 @@ export interface Country {
     common: string;
   };
   cca2: string;
-  ccn3: string;
-  cca3: string;
-  capital: string[];
+  ccn3?: string;
+  cca3?: string;
+  capital?: string[];
   region: string;
   population: number;
   flags: {
