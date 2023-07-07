@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
         element: <CountriesPage />,
       },
       {
-        path: ":alpha2Code",
+        path: ":cca2",
         element: <CountryPage />,
       },
     ],
