@@ -22,5 +22,6 @@ export function getCountries(): Country[] {
     cca2: item.cca2,
     ccn3: item.ccn3,
     cca3: item.cca3,
+    borders: item.borders,
   }));
 }
