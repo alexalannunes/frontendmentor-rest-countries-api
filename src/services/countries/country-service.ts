@@ -5,8 +5,17 @@ export function getCountries(): Country[] {
   return data.map((item) => ({
     name: {
       common: item.name.common,
+      nativeName: {
+        ara: {
+          common: item.name.nativeName?.ara?.common,
+        },
+      },
     },
+    tld: item.tld,
+    currencies: item.currencies,
+    languages: item.languages,
     region: item.region,
+    subRegion: item.subregion,
     population: item.population,
     flags: item.flags,
     capital: item.capital,
