@@ -45,9 +45,9 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
-
+- Solution URL: https://www.frontendmentor.io/solutions/frontend-mentor-rest-countries-api-with-color-theme-switcher-solutio-Wu6ZdP_BxU
+- Live Site URL: https://frontendmentor-rest-countries-api-v1.vercel.app/
+- REST Countries API: https://restcountries.com/
 ## My process
 First of all, I wanted to develop all the aesthetics of the project, such as layout and colors. Gradually I installed dependencies such as routing and icons. For the development I used a mock to adjust the expectations of the design. At the end of it all, I installed data fetching and caching libraries for a better experience.
 ### Built with
