@@ -10,10 +10,13 @@ export function useFilters(
   }
 
   const normalizedSearch = search.trim().toLowerCase();
-  const normalizedRegion = search.time().toLowerCase();
+  const normalizedRegion = region.trim().toLowerCase();
 
   return countries.filter((country) => {
-    return (!normalizedSearch || country.name.common.toLowerCase().includes(normalizedSearch)) && 
-           (!normalizedRegion || country.region.toLowerCase() === normalizedRegion)
-  )
+    return (
+      (!normalizedSearch ||
+        country.name.common.toLowerCase().includes(normalizedSearch)) &&
+      (!normalizedRegion || country.region.toLowerCase() === normalizedRegion)
+    );
+  });
 }
