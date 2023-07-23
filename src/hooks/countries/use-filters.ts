@@ -5,16 +5,18 @@ export function useFilters(
   region: string,
   countries?: Country[]
 ) {
-  if (countries) {
-    const filteredCountriesSearch = countries.filter((country) =>
-      country.name.common.toLowerCase().includes(search.toLowerCase())
-    );
-
-    const filteredCountriesRegion = !region
-      ? filteredCountriesSearch
-      : filteredCountriesSearch.filter((country) => country.region === region);
-
-    return filteredCountriesRegion;
+  if (!countries) {
+    return [];
   }
-  return [];
+
+  const normalizedSearch = search.trim().toLowerCase();
+  const normalizedRegion = region.trim().toLowerCase();
+
+  return countries.filter((country) => {
+    return (
+      (!normalizedSearch ||
+        country.name.common.toLowerCase().includes(normalizedSearch)) &&
+      (!normalizedRegion || country.region.toLowerCase() === normalizedRegion)
+    );
+  });
 }
